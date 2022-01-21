@@ -20,9 +20,11 @@ class ProjectController extends Controller
    public function store(Request $request){
        $students = new students; //calling the student class model
        //call the table fields and pass some data from the input types array
+       //input function get input type name as a parameter
        $students->name = $request->input('name');
        $students->age = $request->input('age'); 
        $students->course = $request->input('course');
+       $students->save(); //This save function will save the input data into the database
        return redirect('index');  
    }
 }
