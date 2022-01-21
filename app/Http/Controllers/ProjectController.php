@@ -25,6 +25,6 @@ class ProjectController extends Controller
        $students->age = $request->input('age'); 
        $students->course = $request->input('course');
        $students->save(); //This save function will save the input data into the database
-       return redirect('index');  
+       return redirect('index')->with('status', 'Data Inserted Successful');
    }
 }

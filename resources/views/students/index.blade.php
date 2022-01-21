@@ -20,6 +20,9 @@
 
 <body>
     <div class="container">
+        @if(session('status'))
+            <div class="alert alert-success">{{ session('status') }}</div>
+        @endif
         <div class="col-md-12 search-table-col"><a href="{{ url('register') }}"><button class="btn btn-outline-primary text-truncate float-none float-sm-none add-another-btn" data-bss-hover-animate="pulse" type="button">Add Student<i class="fas fa-plus-circle edit-icon"></i></button></a>
             <div class="form-group pull-right col-lg-4"><input type="text" class="search form-control" placeholder="Search by typing here.."></div><span class="counter pull-right"></span>
             <div class="table-responsive table table-hover table-bordered results" style="margin-top: 5px;">
