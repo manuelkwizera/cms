@@ -20,3 +20,4 @@ Route::get('/register', 'App\Http\Controllers\ProjectController@create');
 Route::post('insert', 'App\Http\Controllers\ProjectController@store');
 Route::get('/edit/{id}', 'App\Http\Controllers\ProjectController@edit');
 Route::put('update/{id}', 'App\Http\Controllers\ProjectController@update');
+Route::get('delete/{id}', 'App\Http\Controllers\ProjectController@delete');

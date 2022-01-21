@@ -30,8 +30,8 @@ class ProjectController extends Controller
 
    //print the data in edit from the database
    public function edit($id){
-       $students = students::find($id);
-       return view('students.edit', compact('students'));
+       $students = students::find($id); //find in the students table where the data that correlate with the passed id
+       return view('students.edit', compact('students')); //return the view with retrived data from the database
    }
 
    //update data from the database
@@ -42,5 +42,11 @@ class ProjectController extends Controller
        $students->course = $request->input('course');
        $students->update();
        return redirect('index')->with('status', 'Update Successful');
+   }
+
+   public function delete($id){
+       $students = students::find($id);
+       $students->delete();
+       return redirect('index')->with('status', 'Delete Successful');
    }
 }
