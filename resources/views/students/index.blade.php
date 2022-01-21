@@ -50,7 +50,10 @@
                             <td>{{ $std->name }}</td>
                             <td>{{ $std->age }}</td>
                             <td>{{ $std->course }}</td>
-                            <td><button class="btn btn-success" style="margin-left: 5px;" type="submit"><i class="fa fa-check" style="font-size: 15px;"></i></button><button class="btn btn-danger" style="margin-left: 5px;" type="submit"><i class="fa fa-trash" style="font-size: 15px;"></i></button></td>
+                            <td>
+                                <a href="{{ url('edit/'.$std->id) }}"><button class="btn btn-success" style="margin-left: 5px;" type="submit"><i class="fa fa-check" style="font-size: 15px;"></i></button></a>
+                                <a href=""><button class="btn btn-danger" style="margin-left: 5px;" type="submit"><i class="fa fa-trash" style="font-size: 15px;"></i></button></a>
+                            </td>
                         </tr>
                         @endforeach
                     </tbody>

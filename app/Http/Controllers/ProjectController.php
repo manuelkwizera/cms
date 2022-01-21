@@ -27,4 +27,20 @@ class ProjectController extends Controller
        $students->save(); //This save function will save the input data into the database
        return redirect('index')->with('status', 'Data Inserted Successful');
    }
+
+   //print the data in edit from the database
+   public function edit($id){
+       $students = students::find($id);
+       return view('students.edit', compact('students'));
+   }
+
+   //update data from the database
+   public function update(Request $request, $id){
+       $students = students::find($id);
+       $students->name = $request->input('name');
+       $students->age = $request->input('age');
+       $students->course = $request->input('course');
+       $students->update();
+       return redirect('index')->with('status', 'Update Successful');
+   }
 }
