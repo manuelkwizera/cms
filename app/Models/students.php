@@ -10,3 +10,4 @@ class students extends Model
     use HasFactory;
     protected $table = 'students'; //creating the table
     protected $fillable = ['name', 'age', 'course']; // defining tha table fields 
+}
